@@ -41,7 +41,6 @@ public class TestAddOrder {
                         .body(json)
                         .when()
                         .post("/api/v1/orders");
-        System.out.println(response.getBody().asString());
         response.then().assertThat().body("track",  notNullValue())
                 .and()
                 .statusCode(201);

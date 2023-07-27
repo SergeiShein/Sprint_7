@@ -17,6 +17,6 @@ public class TestListOrders {
         Response response = given()
                 .get("/api/v1/orders");
         List <HashMap<String, Object>> orders = response.jsonPath().getList("orders");
-        Assert.assertTrue(!orders.isEmpty());
+        Assert.assertFalse(orders.isEmpty());
     }
 }

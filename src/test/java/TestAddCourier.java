@@ -21,7 +21,6 @@ public class TestAddCourier {
                         .body(json)
                         .when()
                         .post("/api/v1/courier");
-        System.out.println(response.getBody().asString());
         response.then().assertThat().body("ok", equalTo(true))
                 .and()
                 .statusCode(201);
@@ -29,13 +28,12 @@ public class TestAddCourier {
     @Test
     public void createRepeatCourier(){
         File json = new File("src/test/resources/Courier/valideSecondCourier.json");
-        Response response =
-                given()
-                        .header("Content-type", "application/json")
-                        .and()
-                        .body(json)
-                        .when()
-                        .post("/api/v1/courier");
+        given()
+                .header("Content-type", "application/json")
+                .and()
+                .body(json)
+                .when()
+                .post("/api/v1/courier");
         Response repeatResponse =
                 given()
                         .header("Content-type", "application/json")
@@ -43,7 +41,6 @@ public class TestAddCourier {
                         .body(json)
                         .when()
                         .post("/api/v1/courier");
-        System.out.println(repeatResponse.getBody().asString());
         repeatResponse.then().assertThat().body("message", equalTo("Этот логин уже используется. Попробуйте другой."))
                 .and()
                 .statusCode(409);
@@ -58,7 +55,6 @@ public class TestAddCourier {
                         .body(json)
                         .when()
                         .post("/api/v1/courier");
-        System.out.println(response.getBody().asString());
         response.then().assertThat().body("message", equalTo("Недостаточно данных для создания учетной записи"))
                 .and()
                 .statusCode(400);
@@ -73,7 +69,6 @@ public class TestAddCourier {
                         .body(json)
                         .when()
                         .post("/api/v1/courier");
-        System.out.println(response.getBody().asString());
         response.then().assertThat().body("message", equalTo("Недостаточно данных для создания учетной записи"))
                 .and()
                 .statusCode(400);

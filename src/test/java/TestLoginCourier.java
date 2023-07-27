@@ -28,7 +28,6 @@ public class TestLoginCourier {
                         .body(json)
                         .when()
                         .post("/api/v1/courier/login");
-        System.out.println(response.getBody().asString());
         response.then().assertThat().body("id",  notNullValue())
                 .and()
                 .statusCode(200);
@@ -44,7 +43,6 @@ public class TestLoginCourier {
                         .body(json)
                         .when()
                         .post("/api/v1/courier/login");
-        System.out.println(response.getBody().asString());
         response.then().assertThat().body("message", equalTo("Учетная запись не найдена"))
                 .and()
                 .statusCode(404);
@@ -60,7 +58,6 @@ public class TestLoginCourier {
                         .body(json)
                         .when()
                         .post("/api/v1/courier/login");
-        System.out.println(response.getBody().asString());
         response.then().assertThat().body("message", equalTo("Учетная запись не найдена"))
                 .and()
                 .statusCode(404);
@@ -76,7 +73,6 @@ public class TestLoginCourier {
                         .body(json)
                         .when()
                         .post("/api/v1/courier/login");
-        System.out.println(response.getBody().asString());
         response.then().assertThat().body("message", equalTo("Недостаточно данных для входа"))
                 .and()
                 .statusCode(400);
@@ -92,7 +88,6 @@ public class TestLoginCourier {
                         .body(json)
                         .when()
                         .post("/api/v1/courier/login");
-        System.out.println(response.getBody().asString());
         response.then().assertThat().body("message", equalTo("Недостаточно данных для входа"))
                 .and()
                 .statusCode(400);
