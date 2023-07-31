@@ -1,0 +1,13 @@
+{
+  "firstName": "Ульяна",
+  "lastName": "Фадева",
+  "address": "Москва, улица Челюскинцев 3",
+  "metroStation": 4,
+  "phone": "+7 972 355 35 35",
+  "rentTime": 3,
+  "deliveryDate": "2023-08-06",
+  "comment": "Привезти самокат",
+  "color": [
+    "BLACK", "GREY"
+  ]
+}
